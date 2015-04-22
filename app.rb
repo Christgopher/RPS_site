@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/scrabble')
+require('./lib/RPS')
 also_reload('lib/**/*.rb')
 
 
@@ -9,6 +9,8 @@ get('/') do
 end
 
 get('/RPSform') do
-  @Winner = params.fetch(('player1').beats?('player2'))
+  @Player1 = params.fetch('player1')
+  @Player2 = params.fetch('player2')
+  @Winner = @Player1.beats?(@Player2)
   erb(:RPS_win)
 end

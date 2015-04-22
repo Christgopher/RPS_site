@@ -8,7 +8,7 @@ get('/') do
   erb(:index)
 end
 
-get('/scrabblepoints') do
-  @points = params.fetch('points').scrabble()
-  erb(:scrabblepoints)
+get('/RPSform') do
+  @Winner = params.fetch(('player1').beats?('player2'))
+  erb(:RPS_win)
 end

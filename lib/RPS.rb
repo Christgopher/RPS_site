@@ -1,15 +1,15 @@
 class String
   define_method(:beats?) do |p_two|
-    rock = {"scissors" => true, "paper" => false, "rock" => false}
-    paper = {"scissors" => false, "paper" => false, "rock" => true}
-    scissors = {"scissors" => false, "paper" => true, "rock" => false}
+    rock = {"scissors" => true, "paper" => false, "rock" => "It's a tie!"}
+    paper = {"scissors" => false, "paper" => "It's a tie!", "rock" => true}
+    scissors = {"scissors" => "It's a tie!", "paper" => true, "rock" => false}
     p_one = self
-    if p_one.==("rock")
+      if p_one.==("rock")
           rock.fetch(p_two)
-        elsif p_one.==("scissors")
+      elsif p_one.==("scissors")
           scissors.fetch(p_two)
-        else
+      else
           paper.fetch(p_two)
-    end
+      end
   end
 end
